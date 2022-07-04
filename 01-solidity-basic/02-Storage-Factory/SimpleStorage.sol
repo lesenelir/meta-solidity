@@ -13,7 +13,7 @@ contract SimpleStorage {
     uint256 public favoriteNum;
 
     // 修改区块链状态的函数
-    function store(uint256 _favoriteNum) public {
+    function store(uint256 _favoriteNum) public virtual {
         favoriteNum = _favoriteNum;
     }
 
