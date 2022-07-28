@@ -61,6 +61,7 @@ contract D is B, C {
     }
 
     // D.bar() 先执行C合约的bar 再执行 B合约的bar 最后执行A合约的bar
+    // D.bar() 先找C中有没有bar ， 如果 C中有bar 则不再调用 B 的 bar
     function bar() public override(B, C) {
         super.bar();
     }

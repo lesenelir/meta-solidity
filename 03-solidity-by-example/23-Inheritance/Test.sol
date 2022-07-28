@@ -39,6 +39,7 @@ contract C is A {
 }
 
 // 当一个在不同合同中都定义的函数被调用时，父合同将从右至左以深度优先的方式进行搜索
+// 深度优先遍历方式，若C找到 foo 则不再去找 B中的foo
 contract D is B, C {
     function foo() public pure override(B, C) returns (string memory) {
         return super.foo(); // return 'C'
